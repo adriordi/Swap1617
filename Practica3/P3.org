@@ -1,0 +1,22 @@
+#+TITLE: Práctica 3.
+
+* Máquina virtual del balanceador con ngix.
+** Configuración:
+   [[file:./configuracion1nginx.png]]
+
+** Peticiones consecutivas a ngix.
+   [[file:./balanceador1.png]]
+   [[file:./balanceador2.png]]
+
+** benchmarck con ngix funcionando.
+   [[file:./apacheBenchmarknginx.png]]
+
+* Máquina virtual balanceadora con haproxy.
+** configuración.
+   [[file:haproxy_sin_warning.png]]
+
+** Peticiones al balanceador haproxy.
+   [[file:haproxy_balanceando.png]]
+
+** benchmark con haproxy funcionando.
+   [[file:apacheBenchmarkhaproxy.png]]

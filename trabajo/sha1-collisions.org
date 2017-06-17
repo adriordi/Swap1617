@@ -1,0 +1,61 @@
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+AUTHOR: Rafael Leyva Ruiz, Adrian Orduña Diaz.
+#+TITLE: Colisiones en SHA-1 y sus implicaciones.
+* ¿En qué consiste SHA-1?
+  - funciones hash para cifrado.
+  - desarrollado por NIST.
+* Versiones de SHA.
+  - SHA-0 1993.
+  - SHA-1 1995.
+  - SHA-2 y SHA-3
+* Usos de SHA-1
+  :PROPERTIES:
+  :reveal_background: https://media.giphy.com/media/3If8u5wFsfII0/giphy.gif
+  :END:
+  - Seguridad en navegadores.
+  - En github (para verificar commits pe)
+  - Buscando archivos duplicados.
+
+* Vulnerabilidades descubiertas:
+  - En 1998  vuonerabilidad para SHA-0. No aplicable a SHA-1.
+    - NSA aumenta seguridad SHA-1.
+
+  - En 2004 vulnerabilidad matematica en SHA-1.
+    - Permitia encontrar colisiones mas rapido.
+    - Irrelevante ya que la complejidad de entonctrar colisiones bajaba de 2⁸⁰ a 2⁶⁹
+      
+** 23 Febrero de 2017
+  - google en colaboracion con CWI Amsterdam crean shatered.
+  - Técnica para encontrar colisiones.
+  - Primer ejemplo práctico en PDF.
+
+* A que afecta.
+  - PGP/GPG 
+  - ISO Checksum
+  - GIT
+  - SVN
+
+* Como afecta a git.
+  :PROPERTIES:
+  :reveal_background: https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif
+  :END:
+  - Todos los archivos y commits se comprueban usando SHA-1.
+  - Es posible crear dos repositorios distintos que tengan el mismo
+    hash.
+  - Si se desea se podrían servir repositorios maliciosos que hubiesen
+    sido verificados como seguros.
+  - Es complejo ya que cada colision tiene que ser creada, no hay
+    forma automatica de hacerla.
+
+* SVN 
+  - Mas afectado que git.
+  - Usa sha1 para deduplicar archivos.
+  - Un repositorio se corrompe al subir dos archivos distintos con
+    mismo hash.
+
+* Conexiones SSL/TLS.
+* Como evitarlo:  
+  :PROPERTIES:
+  :reveal_background: https://media.giphy.com/media/kQOxxwjjuTB7O/giphy.gif
+  :END:
+** Usar SHA-3 o SHA-256.

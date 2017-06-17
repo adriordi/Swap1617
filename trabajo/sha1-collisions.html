@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Colisiones en SHA-1 y sus implicaciones.</title>
+<meta name="author" content="(Rafael Leyva Ruiz, Adrian Orduña Diaz.)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Colisiones en SHA-1 y sus implicaciones.</h1><h2 class="author">Rafael Leyva Ruiz, Adrian Orduña Diaz.</h2><p class="date">Created: 2017-05-30 mar 23:54</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org2b1b571">1. ¿En qué consiste SHA-1?</a></li>
+<li><a href="#/slide-orge79582a">2. Versiones de SHA.</a></li>
+<li><a href="#/slide-org47ad963">3. Usos de SHA-1</a></li>
+<li><a href="#/slide-orgd009c3e">4. Vulnerabilidades descubiertas:</a>
+<ul>
+<li><a href="#/slide-orgca4cd44">4.1. 23 Febrero de 2017</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgdfe5a4d">5. A que afecta.</a></li>
+<li><a href="#/slide-org522e311">6. Como afecta a git.</a></li>
+<li><a href="#/slide-org34b43a7">7. SVN</a></li>
+<li><a href="#/slide-org7b227f9">8. Conexiones SSL/TLS.</a></li>
+<li><a href="#/slide-org5e2b796">9. Como evitarlo:</a>
+<ul>
+<li><a href="#/slide-org1e534f2">9.1. Usar SHA-3 o SHA-256.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-org2b1b571">
+<h2 id="org2b1b571"><span class="section-number-2">1</span> ¿En qué consiste SHA-1?</h2>
+<ul>
+<li>funciones hash para cifrado.</li>
+<li>desarrollado por NIST.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge79582a">
+<h2 id="orge79582a"><span class="section-number-2">2</span> Versiones de SHA.</h2>
+<ul>
+<li>SHA-0 1993.</li>
+<li>SHA-1 1995.</li>
+<li>SHA-2 y SHA-3</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org47ad963" data-background="https://media.giphy.com/media/3If8u5wFsfII0/giphy.gif">
+<h2 id="org47ad963"><span class="section-number-2">3</span> Usos de SHA-1</h2>
+<ul>
+<li>Seguridad en navegadores.</li>
+<li>En github (para verificar commits pe)</li>
+<li>Buscando archivos duplicados.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd009c3e">
+<h2 id="orgd009c3e"><span class="section-number-2">4</span> Vulnerabilidades descubiertas:</h2>
+<ul>
+<li>En 1998  vuonerabilidad para SHA-0. No aplicable a SHA-1.
+<ul>
+<li>NSA aumenta seguridad SHA-1.</li>
+
+</ul></li>
+
+<li>En 2004 vulnerabilidad matematica en SHA-1.
+<ul>
+<li>Permitia encontrar colisiones mas rapido.</li>
+<li>Irrelevante ya que la complejidad de entonctrar colisiones bajaba de 2⁸⁰ a 2⁶⁹</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgca4cd44">
+<h3 id="orgca4cd44"><span class="section-number-3">4.1</span> 23 Febrero de 2017</h3>
+<ul>
+<li>google en colaboracion con CWI Amsterdam crean shatered.</li>
+<li>Técnica para encontrar colisiones.</li>
+<li>Primer ejemplo práctico en PDF.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdfe5a4d">
+<h2 id="orgdfe5a4d"><span class="section-number-2">5</span> A que afecta.</h2>
+<ul>
+<li>PGP/GPG</li>
+<li>ISO Checksum</li>
+<li>GIT</li>
+<li>SVN</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org522e311" data-background="https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif">
+<h2 id="org522e311"><span class="section-number-2">6</span> Como afecta a git.</h2>
+<ul>
+<li>Todos los archivos y commits se comprueban usando SHA-1.</li>
+<li>Es posible crear dos repositorios distintos que tengan el mismo
+hash.</li>
+<li>Si se desea se podrían servir repositorios maliciosos que hubiesen
+sido verificados como seguros.</li>
+<li>Es complejo ya que cada colision tiene que ser creada, no hay
+forma automatica de hacerla.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org34b43a7">
+<h2 id="org34b43a7"><span class="section-number-2">7</span> SVN</h2>
+<ul>
+<li>Mas afectado que git.</li>
+<li>Usa sha1 para deduplicar archivos.</li>
+<li>Un repositorio se corrompe al subir dos archivos distintos con
+mismo hash.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7b227f9">
+<h2 id="org7b227f9"><span class="section-number-2">8</span> Conexiones SSL/TLS.</h2>
+</section>
+</section>
+<section>
+<section id="slide-org5e2b796" data-background="https://media.giphy.com/media/kQOxxwjjuTB7O/giphy.gif">
+<h2 id="org5e2b796"><span class="section-number-2">9</span> Como evitarlo:</h2>
+</section>
+<section id="slide-org1e534f2">
+<h3 id="org1e534f2"><span class="section-number-3">9.1</span> Usar SHA-3 o SHA-256.</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

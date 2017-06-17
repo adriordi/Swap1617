@@ -1,0 +1,22 @@
+#+TITLE: Práctica 5.
+
+* Base de datos mySQL.
+  [[file:./P5-DBcreada.png]]
+
+* Copia de seguridad usando mysqldumb
+  [[file:./P5-bdduplicada.png]]
+
+* Restauracion de la BD.
+  [[file:P5-DBduplicadaM2.png]]
+
+* Tecnica maestro-esclavo.
+** Configuración maestro-esclavo.
+   [[file:P5-configurandomslave.png]]
+** Máquina actuando de maestro.
+   [[file:P5-Mmaestra.png]]
+** Máquina actuando de esclavo.
+   [[file:P5-MEsclava.png]]
+** Estado de la máquina maestra
+   [[file:P5-masterstatus.png]]
+** No hay fallos.
+   [[file:P5-sbm.png]]

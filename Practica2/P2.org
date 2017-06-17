@@ -1,0 +1,12 @@
+#+TITLE: Practica 2.
+
+* Clonado de archivos por ssh
+  Tras ejecutar la orden =rsync -avz -e ssh /var/www 10.0.2.5:/var/www/= el resultado fue:
+  [[file:./rsync1.png]]
+
+* Configuracion de ssh para acceder sin contraseña.
+  Aqui se ilustra como se ejecutan comandos en la máquina remota:
+  [[file:./ssh-keys.png]]
+
+* Crontab para sincronizar /var/www/
+  [[file:./crontabswap.png]]

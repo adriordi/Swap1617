@@ -1,0 +1,18 @@
+#+TITLE: Práctica 4.
+
+* Instalacion del certificado SSL autofirmado.
+** Configuración del certificado.
+  [[file:./P4-archivoconfiguracion.png]]
+
+** Certificado SSL.
+   [[file:./P4-autofirmado.png]]
+
+** Accediendo al certificado.
+   [[file:P4-https.png]]
+
+* Reglas del cortafuegos.
+** Configuración del cortafuegos con iptables.
+   [[file:P4-iptables-configurada.png]]
+
+** Antes de configurar el cortafuegos.
+   [[file:P4-iptables-vacia.png]]
