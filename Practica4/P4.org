@@ -1,6 +1,6 @@
 #+TITLE: Práctica 4.
 
-* Instalacion del certificado SSL autofirmado.
+* Instalación del certificado SSL autofirmado.
 ** Configuración del certificado.
   [[file:./P4-archivoconfiguracion.png]]
 

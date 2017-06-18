@@ -6,7 +6,7 @@
 * Copia de seguridad usando mysqldumb
   [[file:./P5-bdduplicada.png]]
 
-* Restauracion de la BD.
+* Restauración de la BD.
   [[file:P5-DBduplicadaM2.png]]
 
 * Tecnica maestro-esclavo.

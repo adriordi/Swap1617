@@ -1,7 +1,7 @@
 #+TITLE: Práctica 1.
 
 * Configuración de las maquinas virtuales.
-** Version de apache tras la instalacion de las maquinas virtuales.
+** Versión de Apache tras la instalación de las máquinas virtuales.
    [[file:./version_apache.png]]
-** Apache corriendo en la instalacion de la máquina virtual.
+** Apache corriendo en la instalación de la máquina virtual.
    [[file:./apache_running.png]]

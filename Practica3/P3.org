@@ -8,15 +8,15 @@
    [[file:./balanceador1.png]]
    [[file:./balanceador2.png]]
 
-** benchmarck con ngix funcionando.
+** Benchmarck con ngix funcionando.
    [[file:./apacheBenchmarknginx.png]]
 
 * Máquina virtual balanceadora con haproxy.
-** configuración.
+** Configuración.
    [[file:haproxy_sin_warning.png]]
 
 ** Peticiones al balanceador haproxy.
    [[file:haproxy_balanceando.png]]
 
-** benchmark con haproxy funcionando.
+** Benchmark con haproxy funcionando.
    [[file:apacheBenchmarkhaproxy.png]]

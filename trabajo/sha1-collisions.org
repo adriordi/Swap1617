@@ -13,29 +13,29 @@
   :reveal_background: https://media.giphy.com/media/3If8u5wFsfII0/giphy.gif
   :END:
   - Seguridad en navegadores.
-  - En github (para verificar commits pe)
+  - En GitHub (para verificar commits p.e.)
   - Buscando archivos duplicados.
 
 * Vulnerabilidades descubiertas:
-  - En 1998  vuonerabilidad para SHA-0. No aplicable a SHA-1.
+  - En 1998, vulnerabilidad para SHA-0. No aplicable a SHA-1.
     - NSA aumenta seguridad SHA-1.
 
-  - En 2004 vulnerabilidad matematica en SHA-1.
-    - Permitia encontrar colisiones mas rapido.
-    - Irrelevante ya que la complejidad de entonctrar colisiones bajaba de 2⁸⁰ a 2⁶⁹
+  - En 2004, vulnerabilidad matemática en SHA-1.
+    - Permitia encontrar colisiones más rápido.
+    - Irrelevante ya que la complejidad de encontrar colisiones bajaba de 2⁸⁰ a 2⁶⁹
       
 ** 23 Febrero de 2017
-  - google en colaboracion con CWI Amsterdam crean shatered.
+  - Google en colaboracion con CWI Amsterdam crean shattered.
   - Técnica para encontrar colisiones.
   - Primer ejemplo práctico en PDF.
 
-* A que afecta.
+* ¿A qué afecta?
   - PGP/GPG 
   - ISO Checksum
   - GIT
   - SVN
 
-* Como afecta a git.
+* ¿Cómo afecta a git?
   :PROPERTIES:
   :reveal_background: https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif
   :END:
@@ -44,12 +44,12 @@
     hash.
   - Si se desea se podrían servir repositorios maliciosos que hubiesen
     sido verificados como seguros.
-  - Es complejo ya que cada colision tiene que ser creada, no hay
-    forma automatica de hacerla.
+  - Es complejo ya que cada colisión tiene que ser creada, no hay
+    forma automática de hacerla.
 
 * SVN 
-  - Mas afectado que git.
-  - Usa sha1 para deduplicar archivos.
+  - Más afectado que git.
+  - Usa SHA-1 para deduplicar archivos.
   - Un repositorio se corrompe al subir dos archivos distintos con
     mismo hash.
 

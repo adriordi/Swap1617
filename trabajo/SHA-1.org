@@ -1,0 +1,41 @@
+#+TITLE: Colisiones SHA-1
+#+AUTHOR: Adri
+
+* SHA-1.
+  El SHA, siglas de Secure Hash Algorithm, es un algoritmo de criptogŕafico de cifrado con
+  funciones HASH, desarrollado por el Instituto Nacional de Estándares y Tecnología (NIST). 
+* ¿En qué consiste SHA-1?
+  SHA-1 se basa en principios similiares a los usados por el profesor Ronald L. Rivest 
+  del MIT en el diseño de los algoritmos MD4 y MD5.
+  SHA-1 produce una salida de 160 bits (20 bytes) de un mensaje inicial que puede tener
+  un tamaño máximo de 2^64 bits.
+* Versiones de SHA. 
+  La primera versión del algoritmo fue creada en 1993 con el nombre de SHA,
+  aunque en la actualidad se la conoce como SHA-0 para evitar confusiones 
+  con las versiones posteriores. 
+  La segunda versión del sistema, publicada con el nombre de SHA-1, fue publicada
+  dos años más tarde. Posteriormente se han publicado SHA-2 en 2001 (formada por 
+  diversas funciones: SHA-224, SHA-256, SHA-384 y SHA-512) y la más reciente, SHA-3,
+  que fue seleccionada en una competición de funciones hash celebrada por el NIST
+  en 2012, esta última versión se caracteriza por ser la más diferente de sus predecesoras.
+* Usos de SHA-1.
+  Los usos más comunes que de SHA-1 que se han visto afectados por las colisiones descubiertas son :
+  -Certificados de las firmas digitales.
+  -Firmas PGP/GPG de los emails.
+  -Actualizaciones software.
+  -Firma de autenticidad de las imagenes de los sistemas operativos.
+  -Sistemas de backup.
+  -Sistemas de deduplication.
+  -GIT
+  -...
+* Vulnerabilidades descubiertas.
+  A lo largo de su vida, a esta familia de algoritmos se le conocen varias vulnerabilidades.
+  En 1998, se encontró una vulnerabilidad para SHA-0, aunque esta no se podía extender a SHA-1.
+  En cualquier caso, la NSA aumentó en ese momento la seguridad del SHA-1.
+  En 2004, se encontró una debilidad matemática den SHA-1, que permitía encontrar colisiones
+  de hash más rápido. Sin embargo, este hallazgo resulta poco relevante, pues la complejidad de búsqueda
+  de colisiones pasaría de 2^80 a 2^69, algo que aún es computacionalmente inviable, requiriendo
+  incluso más trabajo que MD5 (2^64).
+  En 2017, un equipo formado por Google y CWI Amsterdam, anunciaron en Febrero, la primera colisión de SHA-1,
+  la cual ha sido nombrada como SHAttered, poniendo en duda el algoritmo.
+  
