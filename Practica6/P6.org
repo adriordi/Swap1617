@@ -1,0 +1,9 @@
+#+TITLE: Práctica 6.
+
+* Configuración del RAID por software.
+** fdisk del sistema
+   [[file:P6-fsdisk.png]]
+** Editado /etc/fstab
+   [[file:P6-fstab.png]]
+** ls para obtener los UUID
+   [[file:P6-ls.png]]
